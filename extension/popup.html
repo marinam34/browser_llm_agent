@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal LLM Agent</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-root">
+      <header class="chat-header">
+        <div class="chat-title">Universal LLM Agent</div>
+        <div id="statusText" class="chat-status">Подключение...</div>
+      </header>
+
+      <section class="backend-row">
+        <input id="backendUrlInput" type="url" placeholder="http://127.0.0.1:8000" />
+        <button id="saveBackendBtn" type="button">Сохранить</button>
+      </section>
+
+      <div id="tabInfo" class="tab-info">Активная вкладка: -</div>
+
+      <div id="chatLog" class="chat-log"></div>
+
+      <form id="chatForm" class="chat-input-row">
+        <input id="userInput" type="text" autocomplete="off" placeholder="Напиши задачу агенту..." />
+        <button id="sendBtn" type="submit">Отправить</button>
+      </form>
+
+      <div id="approvalBar" class="approval-bar">
+        <div id="approvalText" class="approval-text">Ожидает подтверждения действия</div>
+        <div class="approval-actions">
+          <button id="approveBtn" type="button">Подтвердить</button>
+          <button id="cancelBtn" type="button">Отменить</button>
+        </div>
+      </div>
+
+      <details class="logs-wrap">
+        <summary>Логи выполнения</summary>
+        <pre id="runLogs" class="run-logs"></pre>
+      </details>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

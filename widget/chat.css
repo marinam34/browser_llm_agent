@@ -1,0 +1,166 @@
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --line: #dbe6ef;
+  --text: #102135;
+  --muted: #5d738d;
+  --accent: #0f766e;
+  --accent-strong: #115e59;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 16% 0%, #e8f3ff 0%, #f8fbff 45%, #f6f9fc 100%);
+}
+
+.chat-root {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 8px;
+  padding: 10px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.chat-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.close-btn {
+  border: none;
+  background: transparent;
+  color: #38506b;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chat-log {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bubble {
+  max-width: 92%;
+  white-space: pre-wrap;
+  line-height: 1.35;
+  font-size: 13px;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.bubble.user {
+  align-self: flex-end;
+  background: #dbebff;
+}
+
+.bubble.assistant {
+  align-self: flex-start;
+  background: #e8fffb;
+}
+
+.bubble.system {
+  align-self: center;
+  max-width: 100%;
+  background: #eff4fb;
+  color: #3a5068;
+}
+
+.approval-bar {
+  display: none;
+  border: 1px solid #facc15;
+  border-radius: 10px;
+  padding: 8px;
+  background: #fffbeb;
+}
+
+.approval-bar.visible {
+  display: block;
+}
+
+.approval-text {
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: #6b4f00;
+}
+
+.approval-actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.approve-btn,
+#sendBtn {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.approve-btn:hover,
+#sendBtn:hover {
+  background: var(--accent-strong);
+}
+
+.cancel-btn {
+  color: #ffffff;
+  background: var(--danger);
+}
+
+.cancel-btn:hover {
+  background: #8f1a11;
+}
+
+.chat-input-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.chat-input-row input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 10px;
+  font-size: 14px;
+}

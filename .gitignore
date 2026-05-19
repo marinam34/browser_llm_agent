@@ -5,8 +5,10 @@ __pycache__/
 *.pyc
 .DS_Store
 
-extension/
-widget/
+extension/*
+!extension/.gitkeep
+widget/*
+!widget/.gitkeep
 
 *.crx
 extension.pem
